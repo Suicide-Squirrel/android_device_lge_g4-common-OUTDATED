@@ -172,6 +172,9 @@
 /dev/tsc_mux0             0660   media       media
 /dev/tsc_ci0              0660   media       media
 
+# time 
+/dev/alarm                0664   system      radio
+
 # sensors
 /sys/devices/i2c-12/12-*  pollrate_ms 0664 system system
 /sys/devices/f9925000.i2c/i2c-0/0-*                 enable         0660    input    system
@@ -237,7 +240,7 @@
 #BT_E : [CONBT-2025] LGC_BT_COMMON_IMP_MOS_V4L2
 
 # SSR devices
-/dev/subsys_*         0640   system     system
+/dev/subsys_*             0640   system     system
 
 # Ultrasound device
 /dev/usf1                 0660   system     system
@@ -246,10 +249,10 @@
 /dev/ramdump*             0640   system     system
 
 # LGE_BROADCAST_TDMB
-/dev/broadcast0           0660   media     media
+/dev/broadcast0           0660   media      media
 
 # LGE_BROADCAST_ISDBT_JAPAN
-/dev/broadcast_*           0660  system      system
+/dev/broadcast_*          0660   system     system
 
 # LGDDM
 /dev/lge_ddm_tty0         0660   system     system
@@ -259,3 +262,4 @@
 /dev/mobicore-user        0666   system     system
 */
 /dev/block/bootdevice/by-name/persistent        0600    system  system
+/dev/msm_hw3dm            0660   system     graphics
