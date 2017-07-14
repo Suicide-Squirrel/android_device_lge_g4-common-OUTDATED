@@ -17,4 +17,3 @@ allow mediadrmserver persist_drm_file:file r_file_perms;
 # ... but they also leave qcoms copy in /firmware/image/
 allow mediadrmserver firmware_file:dir search;
 allow mediadrmserver firmware_file:file r_file_perms;
-
