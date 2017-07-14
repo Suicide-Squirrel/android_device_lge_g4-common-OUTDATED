@@ -11,4 +11,6 @@ type sysfs_gesture, fs_type, sysfs_type;
 type sysfs_power_management, sysfs_type, fs_type;
 type rtc_sysfs, fs_type;
 type proc_irq, fs_type;
+type nv_data_file, file_type;
+type proc_touchpanel, fs_type;
 

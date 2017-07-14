@@ -8,3 +8,5 @@ allow system_app mpctl_socket:dir r_dir_perms;
 unix_socket_send(system_app, mpctl, mpdecision)
 unix_socket_connect(system_app, mpctl, mpdecision)
 
+allow system_app proc_touchpanel:dir search;
+allow system_app proc_touchpanel:file rw_file_perms;
