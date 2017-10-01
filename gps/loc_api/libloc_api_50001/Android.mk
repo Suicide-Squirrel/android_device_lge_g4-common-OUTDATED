@@ -38,6 +38,8 @@ LOCAL_CFLAGS += \
      -fno-short-enums \
      -D_ANDROID_
 
+include $(BUILD_SHARED_LIBRARY)
+
 LOCAL_C_INCLUDES:= \
     $(TARGET_OUT_HEADERS)/gps.utils \
     $(TARGET_OUT_HEADERS)/libloc_core \
@@ -56,8 +58,6 @@ LOCAL_COPY_HEADERS:= \
    loc_eng_log.h
 
 LOCAL_PRELINK_MODULE := false
-
-include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 
