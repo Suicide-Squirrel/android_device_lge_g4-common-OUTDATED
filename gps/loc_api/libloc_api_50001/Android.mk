@@ -10,6 +10,14 @@ LOCAL_MODULE_OWNER := qcom
 
 LOCAL_MODULE_TAGS := optional
 
+include $(BUILD_SHARED_LIBRARY)
+
+LOCAL_C_INCLUDES:= \
+    $(TARGET_OUT_HEADERS)/gps.utils \
+    $(TARGET_OUT_HEADERS)/libloc_core \
+    $(call project-path-for,qcom-gps)/loc_api/libloc_api_50001 \
+    $(TARGET_OUT_HEADERS)/libflp
+
 LOCAL_SHARED_LIBRARIES := \
     libutils \
     libcutils \
@@ -37,14 +45,6 @@ LOCAL_SRC_FILES += \
 LOCAL_CFLAGS += \
      -fno-short-enums \
      -D_ANDROID_
-
-include $(BUILD_SHARED_LIBRARY)
-
-LOCAL_C_INCLUDES:= \
-    $(TARGET_OUT_HEADERS)/gps.utils \
-    $(TARGET_OUT_HEADERS)/libloc_core \
-    $(call project-path-for,qcom-gps)/loc_api/libloc_api_50001 \
-    $(TARGET_OUT_HEADERS)/libflp
 
 LOCAL_COPY_HEADERS_TO:= libloc_eng/
 LOCAL_COPY_HEADERS:= \
