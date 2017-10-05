@@ -1,0 +1,3 @@
+[submodule "overlay/frameworks/opt/telephony"]
+	path = overlay/frameworks/opt/telephony
+	url = ../../CypherOS/frameworks_opt_telephony.git
