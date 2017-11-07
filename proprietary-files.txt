@@ -42,6 +42,7 @@ lib64/liblgmabl.so
 lib64/libuicc.so
 lib64/libqdMetaData.so
 lib64/libmotext_inf.so
+lib64/libfilterpack_facedetect.so
 -lib64/libloc_ds_api.so
 -lib64/libcir_driver.so
 lib64/libmdmcutback.so
