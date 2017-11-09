@@ -29,6 +29,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
 
+include $(LOCAL_PATH)/system_prop.mk
 include $(LOCAL_PATH)/product/*.mk
 
 $(call inherit-product, $(LOCAL_PATH)/overlay/frameworks/native/build/phone-xxxhdpi-3072-dalvik-heap.mk)
