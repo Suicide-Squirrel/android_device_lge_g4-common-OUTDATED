@@ -328,7 +328,6 @@ static int loc_init(GpsCallbacks* callbacks)
     loc_afw_data.adapter->setXtraUserAgent();
 
     if(retVal) {
-        LOC_LOGE("loc_eng_init() fail!");
         goto err;
     }
 
