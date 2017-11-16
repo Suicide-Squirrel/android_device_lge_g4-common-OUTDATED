@@ -26,7 +26,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.passthrough=false \
     audio.offload.pcm.24bit.enable=true \
     audio.offload.multiple.enabled=false \
-    audio.deep_buffer.media=true
+    audio.deep_buffer.media=true \
+    tunnel.audio.encode=false \
+    use.dedicated.device.for.voip=true \
 
 # voip
 PRODUCT_PROPERTY_OVERRIDES += \
