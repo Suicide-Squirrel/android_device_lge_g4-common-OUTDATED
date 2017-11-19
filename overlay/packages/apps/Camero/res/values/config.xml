@@ -42,4 +42,7 @@
 
     <!-- Enable support for LGE HDR -->
     <bool name="lge_hdr_mode">true</bool>
+
+    <!-- Force use camera api v2 -->
+    <bool name="use_camera_api_v2">false</bool>
 </resources>
