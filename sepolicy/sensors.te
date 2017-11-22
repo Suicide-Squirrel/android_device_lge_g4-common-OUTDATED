@@ -1,4 +1,6 @@
 allow sensors lge_diag_device:chr_file { open read write ioctl };
+allow sensors sensors_data_file:file { open read write getattr };
+allow sensors sensors_data_file:dir { open read ioctl getattr };
 allow sensors self:capability { net_raw };
 
 allow sensors shell_exec:file { entrypoint read };
