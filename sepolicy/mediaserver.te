@@ -13,4 +13,5 @@ allow mediaserver mpctl_data_file:dir search;
 allow mediaserver mpctl_data_file:sock_file write;
 allow mediaserver mpctl_socket:dir search;
 allow mediaserver mpctl_socket:sock_file write;
-
+unix_socket_send(mediaserver, mpctl, mpdecision)
+unix_socket_connect(mediaserver, mpctl, mpdecision)
