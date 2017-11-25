@@ -1,5 +1,5 @@
 #!/system/bin/sh
-# Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+# Copyright (c) 2012-2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -788,9 +788,9 @@ case "$target" in
         # Restore CPU 4 max freq from msm_performance
         echo "4:1632000 5:1632000" > /sys/module/msm_performance/parameters/cpu_max_freq
 	# input boost,cpu boost
-	echo 0:672000 1:0 2:0 3:0 4:0 5:0 > /sys/module/cpu_boost/parameters/input_boost_freq
+	echo 0:672000 1:0 2:0 3:0 4:480000 5:0 > /sys/module/cpu_boost/parameters/input_boost_freq
         # multi boost configuration
-        echo 0:600000 > /sys/module/cpu_boost/parameters/multi_boost_freq
+        echo 0:672000 > /sys/module/cpu_boost/parameters/multi_boost_freq
 
         # Setting b.L scheduler parameters
         echo 1 > /proc/sys/kernel/sched_migration_fixup
@@ -816,7 +816,7 @@ case "$target" in
         done
 
         # Disable sched_boost
-        echo 0 > /proc/sys/kernel/sched_boost
+        # echo 0 > /proc/sys/kernel/sched_boost
 
 		# Set Memory parameters
         configure_memory_parameters
