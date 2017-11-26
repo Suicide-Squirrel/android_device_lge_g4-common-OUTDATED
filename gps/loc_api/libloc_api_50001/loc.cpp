@@ -240,13 +240,8 @@ extern "C" const GpsInterface* get_gps_interface()
         //APQ8064
         gps_conf.CAPABILITIES &= ~(GPS_CAPABILITY_MSA | GPS_CAPABILITY_MSB);
         gss_fd = open("/dev/gss", O_RDONLY);
-        if (gss_fd < 0) {
-            LOC_LOGE("GSS open failed: %s\n", strerror(errno));
-        }
-        else {
             LOC_LOGD("GSS open success! CAPABILITIES %0lx\n",
                      gps_conf.CAPABILITIES);
-        }
         break;
     case GNSS_NONE:
         //MPQ8064
@@ -570,10 +565,7 @@ const GpsGeofencingInterface* get_geofence_interface(void)
 
     if (!handle)
     {
-        if ((error = dlerror()) != NULL)  {
-            LOC_LOGE ("%s, dlopen for libgeofence.so failed, error = %s\n", __func__, error);
-           }
-        goto exit;
+        if ((error = dlerror()) != NULL) goto exit;
     }
     dlerror();    /* Clear any existing error */
     get_gps_geofence_interface = (get_gps_geofence_interface_function)dlsym(handle, "gps_geofence_get_interface");
