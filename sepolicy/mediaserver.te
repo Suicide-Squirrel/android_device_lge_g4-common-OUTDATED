@@ -8,7 +8,6 @@ allow mediaserver firmware_data_file:dir { search };
 allow mediaserver firmware_data_file:file { read getattr open };
 allow mediaserver multimedia_data_file:dir { search };
 # communicate with perfd
-allow mediaserver perfd:unix_stream_socket connectto;
 allow mediaserver mpctl_data_file:dir search;
 allow mediaserver mpctl_data_file:sock_file write;
 allow mediaserver mpctl_socket:dir search;
