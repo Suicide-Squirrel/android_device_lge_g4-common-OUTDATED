@@ -207,6 +207,8 @@ void loc_logger_init(unsigned long debug, unsigned long timestamp)
    if (loc_logger.DEBUG_LEVEL > 2) {
        loc_logger.DEBUG_LEVEL = 0;
    }
+   else
+       loc_logger.DEBUG_LEVEL = 0;
 #endif
    loc_logger.TIMESTAMP   = timestamp;
 }
