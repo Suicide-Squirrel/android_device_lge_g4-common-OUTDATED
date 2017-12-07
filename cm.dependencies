@@ -14,5 +14,11 @@
   {
     "repository": "android_hardware_sony_timekeep",
     "target_path": "hardware/sony/timekeep"
+  },
+  {
+    "remote":"github",
+    "repository":"Suicide-Squirrel/proprietary_vendor_lge",
+    "target_path":"vendor/lge",
+    "revision":"refs/heads/cm-13.0"
   }
 ]
