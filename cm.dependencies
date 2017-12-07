@@ -1,7 +1,9 @@
 [
   {
-    "repository": "android_kernel_lge_msm8992",
-    "target_path": "kernel/lge/msm8992"
+    "remote":"github",
+    "repository":"Suicide-Squirrel/Titan-Kernel-LG-G4",
+    "target_path":"kernel/lge/titan",
+    "revision":"aosp"
   },
   {
     "repository": "android_device_qcom_common",
