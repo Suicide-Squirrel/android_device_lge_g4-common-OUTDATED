@@ -4,7 +4,6 @@ allow mediadrmserver firmware_data_file:dir { search };
 allow mediadrmserver firmware_data_file:file { read open getattr };
 allow mediadrmserver rootfs:lnk_file { getattr };
 # communicate with perfd
-allow mediadrmserver perfd:unix_stream_socket connectto;
 allow mediadrmserver mpctl_data_file:dir search;
 allow mediadrmserver mpctl_data_file:sock_file write;
 allow mediadrmserver mpctl_socket:dir search;

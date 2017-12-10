@@ -2,7 +2,7 @@
   {
     "repository": "Suicide-Squirrel/Titan-Kernel-LG-G4",
     "target_path": "kernel/lge/titan",
-    "branch": "aosp",
+    "branch": "aosp-o",
     "remote": "github" 
   },
   {
