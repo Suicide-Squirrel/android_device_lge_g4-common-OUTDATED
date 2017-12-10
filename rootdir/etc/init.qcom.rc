@@ -1053,6 +1053,11 @@ service hwaddrs /system/bin/hwaddrs
     group system wifi
     oneshot
 
+service cal_sensors-sh /vendor/bin/sh /init.sensors.sh
+    class core
+    user root
+    oneshot
+
 # Running hwaddrs under init is enforcing 0600, we need more
 on property:init.svc.hwaddrs=stopped
     chmod 644 /data/misc/wifi/config
