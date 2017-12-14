@@ -48,7 +48,7 @@ on fs
 on early-fs
     symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
     mount_all fstab.qcom
-    chmod 666 /dev/block/mmcblk0p35
+    chmod 0664 /dev/block/mmcblk0p35
 
     restorecon_recursive /persist
     restorecon_recursive /carrier
@@ -459,7 +459,47 @@ on post-fs-data
     mkdir /data/misc/display 0770 system graphics
     mkdir /persist/display 0770 system graphics
 
-    # Mounting of persist is moved to 'on emmc-fs' and 'on fs' sections
+# EMMC
+    start set_emmc_size
+
+    symlink /dev/graphics/fb1 /dev/graphics/hdmi
+
+    chown system graphics /sys/class/graphics/fb1/hpd
+    chown system graphics /sys/class/graphics/fb1/res_info
+    chown system graphics /sys/class/graphics/fb1/vendor_name
+    chown system graphics /sys/class/graphics/fb1/product_description
+    chown system system /sys/class/graphics/fb1/format_3d
+    chown system system /sys/class/graphics/fb1/s3d_mode
+    chown system system /sys/class/graphics/fb1/hdcp/tp
+    chown system system /sys/class/graphics/fb1/pa
+    chmod 0664 /sys/devices/virtual/graphics/fb1/hpd
+    chmod 0664 /sys/devices/virtual/graphics/fb1/res_info
+    chmod 0664 /sys/devices/virtual/graphics/fb1/vendor_name
+    chmod 0664 /sys/devices/virtual/graphics/fb1/product_description
+    chmod 0664 /sys/devices/virtual/graphics/fb1/video_mode
+    chmod 0664 /sys/devices/virtual/graphics/fb1/format_3d
+    chmod 0664 /sys/devices/virtual/graphics/fb1/s3d_mode
+    chmod 0664 /sys/devices/virtual/graphics/fb1/hdcp/tp
+    chmod 0664 /sys/devices/virtual/graphics/fb1/pa
+
+on property:persist.sys.emmc_size=32G
+   setprop ro.device.memory.system 0
+   setprop ro.device.memory.internal 32
+
+on property:persist.sys.emmc_size=16G
+    setprop ro.device.memory.system 0
+    setprop ro.device.memory.internal 16
+
+# set eMMC size
+service set_emmc_size /system/bin/sh /set_emmc_size.sh
+    class main
+    user root
+    group media_rw system sdcard_rw
+    disabled
+    oneshot
+
+# END EMMC
+
     # We chown/chmod /persist again so because mount is run as root + defaults
     chown system system /persist
     chmod 0771 /persist
