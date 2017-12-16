@@ -927,12 +927,14 @@ on property:persist.sys.qlogd=0
 service vm_bms /system/bin/vm_bms
     user root
     group root
+    disabled
 
-service msm_irqbalance /system/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.conf
+service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
+    socket msm_irqbalance seqpacket 660 root system
     class core
     user root
     group root
-    writepid /dev/cpuset/system-background/tasks
+    disabled
 
 # init.qcom.usb.sh configure RNDIS to go through HW IPA
 service qcom-usb-sh /system/bin/sh /init.qcom.usb.sh
