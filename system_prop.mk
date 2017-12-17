@@ -10,20 +10,23 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.audio.ssr=false \
-    persist.audio.ssr.3mic=false \
+    persist.audio.ssr.3mic=true \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=true \
     ro.qc.sdk.audio.fluencetype=fluence \
     ro.qc.sdk.audio.ssr=false \
     tunnel.audio.encode=false \
+    audio.deep_buffer.media=true \
+    audio.offload.pcm.enable=true \
+    audio.offload.buffer.size.kb=32 \
     use.voice.path.for.pcm.voip=true \
     use.dedicated.device.for.voip=true \
     av.offload.enable=false
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-    mm.enable.qcom_parser=3314291 \
+    mm.enable.qcom_parser=3379827 \
     mm.enable.smoothstreaming=true \
     media.aac_51_output_enabled=true \
     qcom.hw.aac.encoder=true \
@@ -72,7 +75,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true \
     ro.qualcomm.cabl=2 \
     ro.vendor.extension_library=libqti-perfd-client.so \
-    persist.dpm.feature=3
+    persist.dpm.feature=1
 
 # QMI
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -87,6 +90,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.add_power_save=1 \
     persist.telephony.oosisdc=false
+
+# Factory Reset Protection
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.frp.pst=/dev/block/bootdevice/by-name/persistent
 
 # Sensor debugging
 # Valid settings (and presumably what they mean):
