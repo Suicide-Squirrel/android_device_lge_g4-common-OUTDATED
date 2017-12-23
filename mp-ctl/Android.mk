@@ -29,6 +29,7 @@ endif
 LOCAL_MODULE := libqti-perfd
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := qti
+LOCAL_LDLIBS := -llog
 
 include $(BUILD_STATIC_LIBRARY)
 
@@ -60,6 +61,7 @@ LOCAL_MODULE := libqti-perfd-client
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_MODULE_OWNER := qti
+LOCAL_LDLIBS := -llog
 include $(BUILD_STATIC_LIBRARY)
 
 include $(CLEAR_VARS)
@@ -79,6 +81,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_STATIC_LIBRARIES += libqti-perfd
 
 LOCAL_MODULE_OWNER := qti
+LOCAL_LDLIBS := -llog
 include $(BUILD_EXECUTABLE)
 
 include $(CLEAR_VARS)
@@ -93,5 +96,6 @@ LOCAL_STATIC_LIBRARIES += libqti-perfd-client
 
 LOCAL_MODULE_OWNER := qti
 LOCAL_PROPRIETARY_MODULE := true
+LOCAL_LDLIBS := -llog
 
 include $(BUILD_SHARED_LIBRARY)

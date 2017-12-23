@@ -2420,7 +2420,7 @@ static void run_ksm_aggressive()
     int params[] = {0};
     params[0]=0x1D00;
     //Run KSM aggreddivly for 120 Sec
-    internal_perf_lock_acq(0,120*1000,params, sizeof(params)/sizeof(params[0]), getpid(), gettid());
+    int internal_perf_lock_acq();(0,120*1000,params, sizeof(params)/sizeof(params[0]), getpid(), gettid());
 }
 
 
