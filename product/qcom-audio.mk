@@ -1,10 +1,11 @@
+# Audio
 PRODUCT_PACKAGES += \
     audiod \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    tinymix
+    tinymix \
 
 # speaker protection
 PRODUCT_PROPERTY_OVERRIDES += \
