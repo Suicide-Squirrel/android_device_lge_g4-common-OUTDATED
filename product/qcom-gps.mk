@@ -1,5 +1,7 @@
 # Location
 PRODUCT_PACKAGES += \
+    libgnss \
+    liblocation_api \
     gps.msm8992
 
 PRODUCT_COPY_FILES += \
