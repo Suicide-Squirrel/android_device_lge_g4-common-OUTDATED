@@ -4,7 +4,8 @@ PRODUCT_PACKAGES += \
     hostapd \
     wpa_supplicant \
     wpa_supplicant.conf \
-    wificond
+    wificond \
+    wifilogd
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
