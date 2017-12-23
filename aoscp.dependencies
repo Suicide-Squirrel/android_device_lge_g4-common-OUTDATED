@@ -1,9 +1,9 @@
 [
   {
-    "repository":  "kernel_lge_msm8992",
-    "target_path": "kernel/lge/msm8992",
-    "branch":      "nougat-mr2",
-    "remote":      "aoscp"
+    "repository": "Suicide-Squirrel/Titan-Kernel-LG-G4",
+    "target_path": "kernel/lge/titan",
+    "branch": "aosp",
+    "remote": "github"
   },
   {
     "repository":  "device_qcom_common",
