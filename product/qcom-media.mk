@@ -8,11 +8,8 @@ PRODUCT_PACKAGES += \
     libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
-    libOmxSwVencMpeg4 \
     libOmxVdec \
-    libOmxVdecHevc \
     libOmxVenc \
-    libOmxVidcCommon \
     libstagefrighthw \
     libstagefright_soft_flacdec
 
