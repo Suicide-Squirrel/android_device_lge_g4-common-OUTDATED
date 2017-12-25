@@ -1,3 +1,5 @@
+type sysfs_devices_fingerprint,  sysfs_type, file_type;
+
 allow fingerprintd tee_device:chr_file { open read write ioctl };
 
 allow fingerprintd firmware_file:file { read getattr open };
