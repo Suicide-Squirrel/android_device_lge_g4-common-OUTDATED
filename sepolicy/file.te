@@ -1,14 +1,13 @@
 type firmware_data_file, fs_type, contextmount_type;
 type persist_lg_data_file, fs_type, mlstrustedobject;
+
 type cust_file, file_type, data_file_type;
 type mpt_file, file_type, data_file_type;
 type multimedia_data_file, file_type, data_file_type;
 type sns_file, file_type, data_file_type;
+
 type rmt_debugfs, fs_type;
-type proc_kernel_sched, fs_type;
-type sysfs_devices_fingerprint, sysfs_type, file_type;
-type sysfs_gesture, fs_type, sysfs_type;
-type sysfs_power_management, sysfs_type, fs_type;
+
 type rtc_sysfs, fs_type;
 type proc_irq, fs_type;
 type nv_data_file, file_type;
