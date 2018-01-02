@@ -1,6 +1,6 @@
-#type sysfs_msm_subsys, sysfs_type, fs_type;
-#štype diag_device, dev_type;
-#type obdm_app, domain;
+type sysfs_msm_subsys, sysfs_type, fs_type;
+type diag_device, dev_type;
+type obdm_app, domain;
 
 app_domain(obdm_app)
 net_domain(obdm_app)
