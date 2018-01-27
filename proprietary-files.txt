@@ -56,7 +56,6 @@ lib64/libvss_nv_iface.so
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
 vendor/bin/LKCore
-vendor/bin/perfd
 vendor/bin/audioflacapp
 vendor/bin/slim_daemon
 vendor/bin/qti
