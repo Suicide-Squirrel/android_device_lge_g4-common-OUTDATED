@@ -1,0 +1,32 @@
+[
+   {
+    "repository": "Suicide-Squirrel/Titan-Kernel-LG-G4",
+    "target_path": "kernel/lge/titan",
+    "branch": "oreo-mr1-release",
+    "remote": "github"
+	},
+  {
+    "repository":  "device_qcom_common",
+    "target_path": "device/qcom/common",
+  },
+  {
+    "repository":  "hardware_sony_thermanager",
+    "target_path": "hardware/sony/thermanager",
+  },
+  {
+    "repository":  "hardware_sony_timekeep",
+    "target_path": "hardware/sony/timekeep",
+  },
+  {
+    "repository":  "proprietary_vendor_lge",
+    "target_path": "vendor/lge",
+  }
+  {
+    "repository": "android_packages_apps_FlipFlap",
+    "target_path": "packages/apps/FlipFlap"
+  },
+  {
+    "repository": "android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings"
+}
+]
