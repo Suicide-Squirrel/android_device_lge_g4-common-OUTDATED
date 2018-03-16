@@ -22,15 +22,16 @@ TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 include $(COMMON_PATH)/PlatformConfig.mk
 include $(COMMON_PATH)/board/*.mk
 
-# Dexpreopt
-WITH_DEXPREOPT := true
-WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
-
 # HIDL
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/configs/manifest.xml
 
 # Keymaster
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+
+# Shim libs
+TARGET_LD_SHIM_LIBS := \
+    /system/vendor/lib/libwvm.so|libshims_wvm.so \
+    /system/vendor/lib64/libril-qc-qmi-1.so|/system/lib64/rild_socket.so
 
 # inherit from the proprietary version
 -include vendor/lge/g4-common/BoardConfigVendor.mk
