@@ -12,7 +12,7 @@ type rtc_sysfs, fs_type;
 type proc_irq, fs_type;
 type nv_data_file, file_type;
 type proc_touchpanel, fs_type;
-
+type healthd_sysfs, fs_type;
 
 # type for devstart
 type sysfs_audio, sysfs_type, fs_type;
