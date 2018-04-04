@@ -71,7 +71,7 @@ on early-fs
 
 on init
     # Shim libs
-    export LD_SHIM_LIBS /system/vendor/lib64/libwvm.so|libshims_wvm.so    
+    export LD_SHIM_LIBS /system/vendor/lib64/libwvm.so|/system/lib64/libshims_wvm.so
 
     mkdir /firmware 771 system system
     mkdir /firmware/image 771 system system
@@ -713,6 +713,7 @@ service rfs_access /system/bin/rfs_access
    class core
    user root
    group system net_raw
+   disabled
 
 on property:wc_transport.start_hci=true
     start start_hci_filter
@@ -1004,6 +1005,7 @@ service perfd /system/bin/perfd
     class main
     user root
     group system
+    disabled
     writepid /dev/cpuset/system-background/tasks
 
 service thermal-engine /system/vendor/bin/thermal-engine
@@ -1013,6 +1015,7 @@ service thermal-engine /system/vendor/bin/thermal-engine
     socket thermal-recv-client stream 660 system system
     socket thermal-recv-passive-client stream 666 system system
     group root
+    disabled
     writepid /dev/cpuset/system-background/tasks
 
 service per_mgr /system/bin/pm-service
@@ -1056,12 +1059,6 @@ service time_daemon /system/bin/time_daemon
     class late_start
     user root
     group root
-
-service timekeep /system/bin/timekeep restore
-    class late_start
-    user root
-    group root
-    oneshot
 
 service adsprpcd /system/bin/adsprpcd
    class main
