@@ -1004,8 +1004,9 @@ service qseecomd /system/bin/qseecomd
 service perfd /system/bin/perfd
     class main
     user root
-    group system
+    group root readproc
     disabled
+    socket perfd seqpacket 0666 root system
     writepid /dev/cpuset/system-background/tasks
 
 service thermal-engine /system/vendor/bin/thermal-engine
