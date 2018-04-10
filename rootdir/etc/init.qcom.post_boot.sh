@@ -25,6 +25,9 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
+# Create cpu device needed to keep only realtime tasks
+touch /dev/cpuctl/tasks
+chmod 777 /dev/cpuctl/tasks
 
 # LGE_CHANGE_S, [LGE_DATA][LGP_DATA_TCPIP_NSRM]
 targetProd=`getprop ro.product.name`
