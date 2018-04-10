@@ -216,6 +216,8 @@ on boot
     chmod 666 /sys/class/graphics/fb0/idle_time
     chown system graphics /dev/graphics/fb0
     chmod 666 /dev/graphics/fb0
+    chown system graphics /sys/devices/virtual/graphics/fb0/vsync_event
+    chmod 666 /sys/devices/virtual/graphics/fb0/vsync_event
 
     # setup permissions for fb1 related nodes
     chown system graphics /sys/class/graphics/fb1/hpd
