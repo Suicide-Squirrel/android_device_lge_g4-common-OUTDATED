@@ -218,6 +218,8 @@ on boot
     chmod 666 /dev/graphics/fb0
     chown system graphics /sys/devices/virtual/graphics/fb0/vsync_event
     chmod 666 /sys/devices/virtual/graphics/fb0/vsync_event
+    chown system graphics /sys/devices/virtual/graphics/fb2/msm_fb_type
+    chmod 666 /sys/devices/virtual/graphics/fb2/msm_fb_type
 
     # setup permissions for fb1 related nodes
     chown system graphics /sys/class/graphics/fb1/hpd
@@ -1005,6 +1007,7 @@ service qseecomd /system/bin/qseecomd
     user root
     group root
     shutdown critical
+    socket perfd seqpacket 0777 root system
     writepid /dev/cpuset/system-background/tasks
 
 service perfd /system/bin/perfd
@@ -1012,7 +1015,6 @@ service perfd /system/bin/perfd
     user root
     group root readproc
     disabled
-    socket perfd seqpacket 0666 root system
     writepid /dev/cpuset/system-background/tasks
 
 service thermal-engine /system/vendor/bin/thermal-engine
