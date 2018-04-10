@@ -28,6 +28,8 @@
 # Create cpu device needed to keep only realtime tasks
 touch /dev/cpuctl/tasks
 chmod 777 /dev/cpuctl/tasks
+mkdir /data/misc/perfd
+chmod 777 /data/misc/perfd
 
 # LGE_CHANGE_S, [LGE_DATA][LGP_DATA_TCPIP_NSRM]
 targetProd=`getprop ro.product.name`
