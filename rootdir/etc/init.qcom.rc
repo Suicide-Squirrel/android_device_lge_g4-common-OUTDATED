@@ -1015,6 +1015,7 @@ service perfd /system/bin/perfd
     user root
     group root readproc
     disabled
+    oneshot
     writepid /dev/cpuset/system-background/tasks
 
 service thermal-engine /system/vendor/bin/thermal-engine
