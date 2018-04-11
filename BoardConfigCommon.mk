@@ -22,9 +22,6 @@ TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 include $(COMMON_PATH)/PlatformConfig.mk
 include $(COMMON_PATH)/board/*.mk
 
-# do not build OTA packages (override in device tree if needed)
-TARGET_SKIP_OTA_PACKAGE := true
-
 # Keymaster
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
