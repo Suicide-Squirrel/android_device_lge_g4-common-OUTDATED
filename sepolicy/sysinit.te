@@ -1,1 +1,3 @@
 allow sysinit rootfs:lnk_file { getattr };
+allow sysinit proc:file { write read getattr open };
+allow sysinit proc_dirty_ratio:file { write read getattr open };

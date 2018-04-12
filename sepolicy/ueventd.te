@@ -6,3 +6,4 @@ allow ueventd healthd_sysfs:lnk_file { getattr };
 allow ueventd healthd_sysfs:dir { search open read };
 allow ueventd healthd_sysfs:file { open read getattr };
 allow ueventd sysfs:file { open read getattr };
+allow ueventd healthd_sysfs:file write;

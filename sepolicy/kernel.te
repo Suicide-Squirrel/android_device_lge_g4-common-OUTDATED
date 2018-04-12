@@ -1,2 +1,3 @@
 allow kernel msm_irqbalanced:process setsched;
+allow kernel self:capability fowner;
 

@@ -4,3 +4,4 @@ allow healthd healthd_sysfs:file { open getattr read };
 allow healthd sysfs:file { open getattr read };
 allow healthd healthd_sysfs:dir { search };
 allow healthd sysfs:dir { search };
+allow healthd_sysfs sysfs:filesystem associate;

@@ -14,3 +14,12 @@ allow init proc_touchpanel:file getattr;
 allow init property_socket:sock_file { create setattr write};
 allow init socket_device:sock_file create;
 allow init socket_device:sock_file setattr;
+
+allow init frp_block_device:blk_file { write setattr };
+allow init healthd_sysfs:dir relabelto;
+allow init healthd_sysfs:file relabelto;
+allow init healthd_sysfs:lnk_file relabelto;
+allow init functionfs:dir mounton;
+allow init mpt_file:dir mounton;
+allow init persist_lg_data_file:dir mounton;
+allow init sensors_data_file:dir mounton;
