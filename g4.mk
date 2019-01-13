@@ -27,7 +27,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Boot animation
 TARGET_BOOT_ANIMATION_RES := 1440
-TARGET_BOOTANIMATION_HALF_RES := true
 
 include $(LOCAL_PATH)/product/*.mk
 
