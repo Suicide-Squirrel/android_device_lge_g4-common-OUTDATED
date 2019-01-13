@@ -31,6 +31,114 @@ chmod 777 /dev/cpuctl/tasks
 mkdir /data/misc/perfd
 chmod 777 /data/misc/perfd
 
+# Create file for ipconfig
+touch /data/misc/ethernet/ipconfig.txt
+chmod 755 /data/misc/ethernet/ipconfig.txt
+
+# We chown/chmod /persist again so because mount is run as root + defaults
+chown system system /persist
+chmod 771 /persist
+chmod 666 /sys/devices/platform/msm_sdcc.1/polling
+chmod 666 /sys/devices/platform/msm_sdcc.2/polling
+chmod 666 /sys/devices/platform/msm_sdcc.3/polling
+chmod 666 /sys/devices/platform/msm_sdcc.4/polling
+
+# Chown polling nodes as needed from UI running on system server
+chown system system /sys/devices/platform/msm_sdcc.1/polling
+chown system system /sys/devices/platform/msm_sdcc.2/polling
+chown system system /sys/devices/platform/msm_sdcc.3/polling
+chown system system /sys/devices/platform/msm_sdcc.4/polling
+
+# Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
+mkdir /data/system 775 system system
+
+# Create directories for Location services
+mkdir /data/misc/location 775 gps gps
+mkdir /data/misc/location/mq 775 gps gps
+mkdir /data/misc/location/xtwifi 775 gps gps
+mkdir /data/misc/location/gpsone_d 775 system gps
+mkdir /data/misc/location/quipc 775 gps system
+mkdir /data/misc/location/gsiff 775 gps gps
+
+# Create directory from IMS services
+mkdir /data/shared 755
+chown system system /data/shared
+
+# Create directory for FOTA
+mkdir /data/fota 771
+chown system system /data/fota
+
+# Make sure the default firmware is loaded
+echo "/system/etc/firmware/fw_bcmdhd.bin" > /sys/module/bcmdhd/parameters/firmware_path
+
+# Create directory for hostapd
+mkdir /data/hostapd 775 system wifi
+
+# Provide the access to hostapd.conf only to root and group
+chmod 660 /data/hostapd/hostapd.conf
+
+# Create /data/time folder for time-services
+mkdir /data/time/ 744 system system
+
+mkdir /data/audio/ 775 media audio
+
+# Create a folder for audio delta files
+mkdir /data/audio/acdbdata 775 media audio
+mkdir /data/audio/acdbdata/delta 775 media audio
+
+setprop vold.post_fs_data_done 1
+
+# Create a folder for SRS to be able to create a usercfg file
+mkdir /data/data/media 775 media media
+
+# Create PERFD deamon related dirs
+mkdir /data/misc/perfd 755 root system
+chmod 2755 /data/misc/perfd
+mkdir /data/system/perfd 775 root system
+chmod 2775 /data/system/perfd
+rm /data/system/perfd/default_values
+
+# Create directory used by sensor subsystem
+mkdir /persist/sensors 775 system root
+chmod 666 /persist/sensors/sensors_settings
+chown system root /persist/sensors/sensors_settings
+mkdir /data/misc/sensors 775 system system
+restorecon_recursive /data/misc/sensors
+
+mkdir /data/tombstones 771 system system
+mkdir /tombstones/modem 771 system system
+mkdir /tombstones/lpass 771 system system
+mkdir /tombstones/wcnss 771 system system
+mkdir /tombstones/dsps 771 system system
+mkdir /persist/data/sfs 744 system system
+mkdir /persist/data/tz 744 system system
+mkdir /persist/tee 744 system system
+mkdir /data/app/mcRegistry 775 system system
+ln -s /persist/tee/00000000.authtokcont.backup /data/app/mcRegistry/00000000.authtokcont.backup
+chown root cw_access /cota
+chmod 771 /cota
+chown system system /preload
+chmod 771 /preload
+
+# set device node permissions for TLC apps
+chmod 644 /dev/mobicore
+chown system system /dev/mobicore
+chmod 666 /dev/mobicore-user
+chown system system /dev/mobicore-user
+
+# restorecon cota partition.
+restorecon_recursive /cota
+
+mkdir /data/usf 744 system system
+
+# Z2G4-BSP-TS@lge.com make directory for sns.reg used by sensordaemon
+mkdir /sns/cal/ 644 system system
+restorecon_recursive /sns
+
+# PCC Calibration
+chown system system /sys/devices/virtual/graphics/fb0/rgb
+chmod 660 /sys/devices/virtual/graphics/fb0/rgb
+
 # LGE_CHANGE_S, [LGE_DATA][LGP_DATA_TCPIP_NSRM]
 targetProd=`getprop ro.product.name`
 case "$targetProd" in
